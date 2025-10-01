@@ -1,0 +1,113 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 1 oct 2025, 4:10:34 p.m.
+    Author     : marbe
+*/
+
+/* ===== Estilo General ===== 
+.color1 {color: #3f2c4c;}
+.color2 {color: #653d63;}
+.color3 {color: #9c5682;}
+.color4 {color: #e87aa8;}
+.color5 {color: #ffacd0;}
+
+.color1 {color: #ff9bf4;}
+.color2 {color: #ffbfda;}
+.color3 {color: #3c0b1a;}
+.color4 {color: #8f827e;}
+.color5 {color: #fffaf2;}
+*/
+
+
+/* PALETA 1 */
+/*
+:root {
+  --color1: #3f2c4c;
+  --color2: #653d63;
+  --color3: #9c5682;
+  --color4: #e87aa8;
+  --color5: #ffacd0;
+}*/
+
+/* PALETA 2  */
+/*
+:root {
+  --color1: #ff9bf4;
+  --color2: #ffbfda;
+  --color3: #3c0b1a;
+  --color4: #8f827e;
+  --color5: #fffaf2;
+}*/
+
+/* Paleta */
+:root {
+  --fondo-oscuro: #241007;
+  --marron-rojizo: #634140;
+  --marron-suave: #583B3A;
+  --texto: #ffffff;
+}
+
+.contenido-principal {
+    width: 80%;
+    padding: 20px;
+    background-color: #241007;  /* marrón muy oscuro */
+    color: #fffaf2;              /* texto crema suave */
+}
+.contenido-principal h3,h1,
+.contenido-principal p {
+    text-align: center;
+}
+
+
+
+
+/* Menú lateral */
+.menu-lateral {
+  width: 20%;
+  background-color: var(--marron-rojizo);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  color: var(--texto);
+}
+
+.menu-lateral h2 {
+  color: var(--texto);
+}
+
+.menu-lateral a {
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--texto);
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.menu-lateral a:hover {
+  background-color: var(--marron-suave);
+  color: #f0d5d5; /* un contraste suave */
+}
+
+table.valores {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+table.valores td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+}
+
+/* Centrar contenido de celdas de la tabla de valores */
+td.valor {
+    text-align: center; 
+    vertical-align: top;
+    padding: 10px;     
+}

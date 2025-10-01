@@ -1,0 +1,99 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 1 oct 2025, 1:00:37 p.m.
+    Author     : marbe
+*/
+/* Contenedor de formularios */
+form {
+    background-color: #f5efe6; /* crema claro */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    max-width: 700px;
+    margin: 30px auto; /* centra el formulario */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Tabla dentro de formularios centrada */
+form table {
+    width: 90%;
+    margin: 0 auto; /* centra la tabla */
+    border-collapse: collapse;
+    background-color: #fff8f0; /* crema más clara */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Celdas de la tabla */
+form td {
+    padding: 12px;
+    font-size: 1rem;
+    color: #241007; /* marrón muy oscuro para el texto */
+}
+
+/* Encabezados de celdas */
+form td:first-child {
+    font-weight: bold;
+    text-align: right;
+    width: 35%;
+}
+
+/* Inputs, textarea y selects */
+form input[type="text"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid #634140; /* marrón rojizo */
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #fffaf2; /* crema muy claro */
+    color: #241007;
+}
+
+/* Efecto al enfocar */
+form input[type="text"]:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #583b3a; /* marrón suave rojizo */
+    box-shadow: 0 0 5px rgba(88,59,58,0.4);
+    outline: none;
+}
+
+/* Botones */
+form button {
+    display: block;
+    background-color: #634140; /* marrón rojizo */
+    color: #fffaf2; /* crema claro */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 20px auto 0 auto; /* centra el botón */
+    transition: all 0.3s ease;
+}
+
+/* Hover de botones */
+form button:hover {
+    background-color: #583b3a; /* marrón suave rojizo */
+}
+
+/* Títulos de sección dentro del formulario */
+form h2 {
+    text-align: center;
+    color: #241007; /* marrón muy oscuro */
+    margin-bottom: 20px;
+}
+
+/* Textarea ajustable */
+form textarea {
+    resize: vertical;
+    min-height: 60px;
+}
