@@ -1,4 +1,3 @@
-
 <%@ page import="projectWeb.DBManager" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.Statement" %>
@@ -12,14 +11,12 @@
         <meta charset="UTF-8">
         <title>Glimm & Glam</title>
         <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="css/formulario.css">
+        <link rel="stylesheet" href="https://raw.githack.com/yuritec/ProgramacionWeb/main/src/main/webapp/css/formulario.css">
     </head>
     <body>
 
         <!-- Encabezado -->
         <header style="background:#3c0b1a; color:white; padding:15px; display:flex; align-items:center; justify-content:center;">
-            <!-- <div class="logo" style="margin-right:20px;">
-                <img src="Imagenes/logo.png" alt="Glimm & Glam" height="60">-->
             <div class="titulo" style="text-align:center;">
                 <h1 style="margin:0;">Glimm & Glam</h1>
                 <p style="margin:0;">Maquillate como reina, brilla como diosa con Glim & Glam</p>
@@ -179,6 +176,19 @@
                             Lunes a Domingo de 8 am a 8 pm
                 </p> 
         </footer>
+        
+        <div class="validador">
+            <a href="https://validator.w3.org/check?uri=referer" target="_blank">
+                <img src="https://www.w3.org/Icons/valid-html401" alt="¡HTML válido!" width="88" height="31">
+            </a>
+        </div>
+        
+        <div class="validador-css">
+            <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+              <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="¡CSS válido!" width="88" height="31">
+            </a>
+        </div>
+
 
     </body>
 </html>

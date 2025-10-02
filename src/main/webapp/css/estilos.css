@@ -1,41 +1,4 @@
 
-
-/* ===== Estilo General ===== 
-.color1 {color: #3f2c4c;}
-.color2 {color: #653d63;}
-.color3 {color: #9c5682;}
-.color4 {color: #e87aa8;}
-.color5 {color: #ffacd0;}
-
-.color1 {color: #ff9bf4;}
-.color2 {color: #ffbfda;}
-.color3 {color: #3c0b1a;}
-.color4 {color: #8f827e;}
-.color5 {color: #fffaf2;}
-*/
-
-
-/* PALETA 1 */
-/*
-:root {
-  --color1: #3f2c4c;
-  --color2: #653d63;
-  --color3: #9c5682;
-  --color4: #e87aa8;
-  --color5: #ffacd0;
-}*/
-
-/* PALETA 2  */
-/*
-:root {
-  --color1: #ff9bf4;
-  --color2: #ffbfda;
-  --color3: #3c0b1a;
-  --color4: #8f827e;
-  --color5: #fffaf2;
-}*/
-
-/* Paleta */
 :root {
   --fondo-oscuro: #241007;
   --marron-rojizo: #634140;
@@ -84,7 +47,7 @@
 
 .menu-lateral a:hover {
   background-color: var(--marron-suave);
-  color: #f0d5d5; /* un contraste suave */
+  color: #f0d5d5; 
 }
 
 table.valores {
@@ -98,9 +61,22 @@ table.valores td {
     vertical-align: top;
 }
 
-/* Centrar contenido de celdas de la tabla de valores */
 td.valor {
     text-align: center; 
     vertical-align: top;
     padding: 10px;     
+}
+
+.validador {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 999;
+}
+
+.validador-css {
+  position: fixed;
+  bottom: 10px;
+  right: 110px; 
+  z-index: 999;
 }
