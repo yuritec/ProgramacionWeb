@@ -17,14 +17,12 @@
 
         <!-- Barra de opciones -->
         <div class="opciones-barra">
-            <a href="http://localhost:8080/ProjectWeb/index.jsp"  class="flecha-inicio">← Inicio</a>
-            <a href="index.jsp"  class="flecha-inicio">← Inicio</a>
             <a href="#alta">Registrar</a>
             <a href="#modificar">Modificar</a>
-            <a href="#eliminar">Eliminar</a>
-            <a href="http://localhost:8080/ProjectWeb/index.jsp"  class="flecha-inicio">← Inicio</a>
-            <a href="index.jsp"  class="flecha-inicio">← Inicio</a>
+            <a href="#eliminar">Eliminar</a>        
         </div>
+        
+        <a href="index.jsp"  class="flecha-inicio">← Inicio</a>
 
         <!-- Formulario Alta -->
         <section id="alta" class="form-seccion">
