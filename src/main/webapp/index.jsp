@@ -11,6 +11,7 @@
         <meta charset="UTF-8">
         <title>Glimm & Glam</title>
         <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="https://raw.githack.com/yuritec/ProgramacionWeb/main/src/main/webapp/css/formulario.css">
     </head>
     <body>
@@ -27,22 +28,26 @@
         <div style="display:flex; min-height:80vh;">
 
             <!-- Menú lateral -->
-            <div class="menu-lateral" style="text-align:center;">
-                    <h2>Menú</h2>
-                    <a href="#nosotros"><b>Nosotros</b></a><br><br>
-                    <a href="#marcas"><b>Marcas</b></a><br><br>
-                    <a href="#rostro"><b>Rostro</b></a><br><br>
-                    <a href="#cejas"><b>Cejas</b></a><br><br>
-                    <a href="#labios"><b>Labios</b></a><br><br>
-                    <a href="#pestanas"><b>Pestañas</b></a><br><br>
-                    <a href="#ojos"><b>Ojos</b></a><br><br>
-                    <a href="#brochas"><b>Brochas</b></a><br><br>
-                    <a href="#sets"><b>Sets</b></a><br><br>
-                    <a href="#skincare"><b>Skincare</b></a><br><br>
-                    <a href="#accesorios"><b>Accesorios</b></a><br><br>
-                    <a href="tablasProductos.jsp"><b>Tablas Productos</b></a><br><br>
-                    <a href="#contacto"><b>Contáctanos</b></a>
-            </div>
+            <nav class="menu-lateral">
+                <center>
+                <h2>Menú</h2>
+                </center>
+                <ul>
+                    <li><a href="#nosotros"><i class="fas fa-user-friends"></i> Nosotros</a></li>
+                    <li><a href="#marcas"><i class="fas fa-tags"></i> Marcas</a></li>
+                    <li><a href="#rostro"><i class="fas fa-smile"></i> Rostro</a></li>
+                    <li><a href="#cejas"><i class="fas fa-eye"></i> Cejas</a></li>
+                    <li><a href="#labios"><i class="fas fa-lips"></i> Labios</a></li>
+                    <li><a href="#pestanas"><i class="fas fa-eye-dropper"></i> Pestañas</a></li>
+                    <li><a href="#ojos"><i class="fas fa-eye"></i> Ojos</a></li>
+                    <li><a href="#brochas"><i class="fas fa-paint-brush"></i> Brochas</a></li>
+                    <li><a href="#sets"><i class="fas fa-gift"></i> Sets</a></li>
+                    <li><a href="#skincare"><i class="fas fa-leaf"></i> Skincare</a></li>
+                    <li><a href="#accesorios"><i class="fas fa-star"></i> Accesorios</a></li>
+                    <li><a href="tablasProductos.jsp"><i class="fas fa-table"></i> Tablas Productos</a></li>
+                    <li><a href="#contacto"><i class="fas fa-envelope"></i> Contáctanos</a></li>
+                </ul>
+            </nav>
 
             <!-- Contenido principal -->
             <div class="contenido-principal">

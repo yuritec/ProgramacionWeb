@@ -20,7 +20,8 @@
             <a href="#alta">Registrar</a>
             <a href="#modificar">Modificar</a>
             <a href="#eliminar">Eliminar</a>
-            <a href="<%= request.getContextPath() %>/index.jsp"  class="flecha-inicio">← Inicio</a>
+            <a href="http://localhost:8080/ProjectWeb/index.jsp"  class="flecha-inicio">← Inicio</a>
+            <a href="index.jsp"  class="flecha-inicio">← Inicio</a>
         </div>
 
         <!-- Formulario Alta -->
