@@ -1,33 +1,88 @@
+/* Fondo de toda la página */
+body {
+    background-color: #241007;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+header {
+    background: #3c0b1a;
+    color: white;
+    padding: 10px 0; /* menos padding vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* para que h1 y p queden en columna */
+}
 
+header h1 {
+    margin: 0;
+    font-size: 1.8rem; /* reduce tamaño del título */
+}
+
+header p {
+    margin: 0;
+    font-size: 1rem; /* reduce tamaño del subtítulo */
+}
+
+/* Título dentro del header */
+header .titulo {
+    text-align:center;
+}
+
+/* Barra horizontal de opciones */
+.opciones-barra {
+    display: flex;
+    justify-content: center;
+    background-color: #634140; /* marrón rojizo */
+    padding: 10px 0;
+    gap: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Estilo de los enlaces de la barra */
+.opciones-barra a {
+    color: #fffaf2;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+/* Hover de los enlaces */
+.opciones-barra a:hover {
+    background-color: #583b3a;
+}
+
+/* Contenedor de los formularios */
 form {
-    background-color: #f5efe6; /* crema claro */
+    background-color: #f5efe6; 
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     max-width: 700px;
-    margin: 30px auto; /* centra el formulario */
-    font-family: 'Arial', sans-serif;
+    margin: 30px auto;
 }
 
-/* Tabla dentro de formularios centrada */
+/* Tabla dentro de formularios */
 form table {
     width: 90%;
-    margin: 0 auto; /* centra la tabla */
+    margin: 0 auto;
     border-collapse: collapse;
-    background-color: #fff8f0; /* crema más clara */
+    background-color: #fff8f0;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Celdas de la tabla */
+/* Celdas de tabla */
 form td {
     padding: 12px;
     font-size: 1rem;
-    color: #241007; /* marrón muy oscuro para el texto */
+    color: #241007;
 }
 
-/* Encabezados de celdas */
+/* Encabezados de tabla */
 form td:first-child {
     font-weight: bold;
     text-align: right;
@@ -40,20 +95,20 @@ form textarea,
 form select {
     width: 100%;
     padding: 8px 10px;
-    border: 2px solid #634140; /* marrón rojizo */
+    border: 2px solid #634140;
     border-radius: 8px;
     font-size: 1rem;
     box-sizing: border-box;
-    transition: all 0.3s ease;
-    background-color: #fffaf2; /* crema muy claro */
+    background-color: #fffaf2;
     color: #241007;
+    transition: all 0.3s ease;
 }
 
-/* Efecto al enfocar */
+/* Focus */
 form input[type="text"]:focus,
 form textarea:focus,
 form select:focus {
-    border-color: #583b3a; /* marrón suave rojizo */
+    border-color: #583b3a;
     box-shadow: 0 0 5px rgba(88,59,58,0.4);
     outline: none;
 }
@@ -61,26 +116,26 @@ form select:focus {
 /* Botones */
 form button {
     display: block;
-    background-color: #634140; /* marrón rojizo */
-    color: #fffaf2; /* crema claro */
+    background-color: #634140;
+    color: #fffaf2;
     border: none;
     padding: 12px 25px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
-    margin: 20px auto 0 auto; /* centra el botón */
+    margin: 20px auto 0 auto;
     transition: all 0.3s ease;
 }
 
 /* Hover de botones */
 form button:hover {
-    background-color: #583b3a; /* marrón suave rojizo */
+    background-color: #583b3a;
 }
 
-/* Títulos de sección dentro del formulario */
+/* Títulos de sección */
 form h2 {
     text-align: center;
-    color: #241007; /* marrón muy oscuro */
+    color: #241007;
     margin-bottom: 20px;
 }
 
@@ -88,4 +143,28 @@ form h2 {
 form textarea {
     resize: vertical;
     min-height: 60px;
+}
+
+/* Todas las secciones empiezan ocultas */
+.form-seccion {
+    display: none;
+}
+
+.flecha-inicio {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #634140;
+    color: #fffaf2;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+    z-index: 1000;
+}
+
+.flecha-inicio:hover {
+    background-color: #583b3a;
 }

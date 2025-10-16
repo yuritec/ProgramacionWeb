@@ -40,9 +40,7 @@
                     <a href="#sets"><b>Sets</b></a><br><br>
                     <a href="#skincare"><b>Skincare</b></a><br><br>
                     <a href="#accesorios"><b>Accesorios</b></a><br><br>
-                    <a href="#alta"><b>Registrar Producto</b></a><br><br>
-                    <a href="#modificar"><b>Modificar Producto</b></a><br><br>
-                    <a href="#eliminar"><b>Eliminar Producto</b></a><br><br>
+                    <a href="tablasProductos.jsp"><b>Tablas Productos</b></a><br><br>
                     <a href="#contacto"><b>Contáctanos</b></a>
             </div>
 
@@ -104,64 +102,6 @@
                 <section id="sets"><h2>Sets</h2></section>
                 <section id="skincare"><h2>Skincare</h2></section>
                 <section id="accesorios"><h2>Accesorios</h2></section>
-
-                <!-- Alta de Producto -->
-                <section id="alta">
-                    <form action="ProductoServlet" method="post">
-                        <h2>Alta de Producto</h2>
-                        <input type="hidden" name="accion" value="alta">
-                        <table>
-                            <tr><td>Nombre:</td><td><input type="text" name="nombre" required></td></tr>
-                            <tr><td>Marca:</td><td><input type="text" name="marca" required></td></tr>
-                            <tr><td>Descripción:</td><td><textarea name="descripcion"></textarea></td></tr>
-                            <tr><td>Precio:</td><td><input type="text" name="precio" required></td></tr>
-                            <tr><td>Stock:</td><td><input type="text" name="stock" required></td></tr>
-                            <tr><td>Categoría:</td>
-                                <td>
-                                    <select name="id_categoria">
-                                        <option value="2">Rostro</option>
-                                        <option value="3">Cejas</option>
-                                        <option value="4">Labios</option>
-                                        <option value="5">Pestañas</option>
-                                        <option value="6">Ojos</option>
-                                        <option value="7">Brochas</option>
-                                        <option value="8">Sets</option>
-                                        <option value="9">Skincare</option>
-                                        <option value="10">Accesorios</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr><td colspan="2" style="text-align:center;"><button type="submit">Guardar</button></td></tr>
-                        </table>
-                    </form>
-                </section>
-
-                <!-- Modificar Producto -->
-                <section id="modificar">
-                    <form action="ProductoServlet" method="post">
-                        <h2>Modificar Producto</h2>
-                        <input type="hidden" name="accion" value="modificar">
-                        <table>
-                            <tr><td>ID Producto:</td><td><input type="text" name="id" required></td></tr>
-                            <tr><td>Nuevo Precio:</td><td><input type="text" name="precio"></td></tr>
-                            <tr><td>Nuevo Stock:</td><td><input type="text" name="stock"></td></tr>
-                            <tr><td colspan="2" style="text-align:center;"><button type="submit">Modificar</button></td></tr>
-                        </table>
-                    </form>
-                </section>
-
-                <!-- Eliminar Producto -->
-                <section id="eliminar">
-                    
-                    <form action="ProductoServlet" method="post">
-                        <h2>Eliminar Producto</h2>
-                        <input type="hidden" name="accion" value="eliminar">
-                        <table>
-                            <tr><td>ID Producto:</td><td><input type="text" name="id" required></td></tr>
-                            <tr><td colspan="2" style="text-align:center;"><button type="submit">Eliminar</button></td></tr>
-                        </table>
-                    </form>
-                </section>
 
             </div>
         </div>
