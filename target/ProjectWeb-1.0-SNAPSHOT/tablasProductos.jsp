@@ -12,6 +12,19 @@
     </head>
     
     <body>
+        <%
+            String accion = request.getParameter("accion");
+            String mensaje = null;
+
+            if ("alta".equals(accion)) {
+                mensaje = "Producto registrado con éxito";
+            } else if ("modificar".equals(accion)) {
+                mensaje = "Producto modificado con éxito";
+            } else if ("eliminar".equals(accion)) {
+                mensaje = "Producto eliminado con éxito";
+            }
+        %>
+
         <header class="barra-navegacion">
             <div class="contenedor-header">
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -46,7 +59,7 @@
 
         <!-- Formulario Alta -->
         <section id="alta" class="form-seccion">
-            <form action="ProductoServlet" method="post">
+            <form method="post">
                 <h2>Registrar Producto</h2>
                 <input type="hidden" name="accion" value="alta">
                 <table>
@@ -70,6 +83,7 @@
                             </select>
                         </td>
                     </tr>
+                    <div class="mensaje-validacion" style="display:none;"></div>
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Guardar</button></td></tr>
                 </table>
             </form>
@@ -77,13 +91,14 @@
 
         <!-- Formulario Modificar -->
         <section id="modificar" class="form-seccion">
-            <form action="ProductoServlet" method="post">
+            <form method="post">
                 <h2>Modificar Producto</h2>
                 <input type="hidden" name="accion" value="modificar">
                 <table>
                     <tr><td>ID Producto:</td><td><input type="text" name="id" required></td></tr>
                     <tr><td>Nuevo Precio:</td><td><input type="text" name="precio"></td></tr>
                     <tr><td>Nuevo Stock:</td><td><input type="text" name="stock"></td></tr>
+                    <div class="mensaje-validacion" style="display:none;"></div>
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Modificar</button></td></tr>
                 </table>
             </form>
@@ -91,11 +106,12 @@
 
         <!-- Formulario Eliminar -->
         <section id="eliminar" class="form-seccion">
-            <form action="ProductoServlet" method="post">
+            <form method="post">
                 <h2>Eliminar Producto</h2>
                 <input type="hidden" name="accion" value="eliminar">
                 <table>
                     <tr><td>ID Producto:</td><td><input type="text" name="id" required></td></tr>
+                    <div class="mensaje-validacion" style="display:none;"></div>
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Eliminar</button></td></tr>
                 </table>
             </form>
@@ -110,6 +126,9 @@
                 Lunes a Domingo de 8 am a 8 pm
             </p>
         </footer>
+        <script>
+            var mensaje = "<%= mensaje != null ? mensaje : "" %>";
+        </script>
     </body>
 
 </html>
