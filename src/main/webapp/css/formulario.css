@@ -1,27 +1,29 @@
 /* Fondo de toda la página */
 body {
-    background-color: #241007;
+    background-color: #ffe6f0; /* rosa muy suave */
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
+
+/* Header */
 header {
-    background: #3c0b1a;
+    background: #c33b80; /* rosa intenso */
     color: white;
-    padding: 10px 0; /* menos padding vertical */
+    padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* para que h1 y p queden en columna */
+    flex-direction: column;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8rem; /* reduce tamaño del título */
+    font-size: 1.8rem;
 }
 
 header p {
     margin: 0;
-    font-size: 1rem; /* reduce tamaño del subtítulo */
+    font-size: 1rem;
 }
 
 /* Título dentro del header */
@@ -33,7 +35,7 @@ header .titulo {
 .opciones-barra {
     display: flex;
     justify-content: center;
-    background-color: #634140; /* marrón rojizo */
+    background-color: #e08ebf; /* rosa medio */
     padding: 10px 0;
     gap: 30px;
     border-radius: 0 0 10px 10px;
@@ -41,7 +43,7 @@ header .titulo {
 
 /* Estilo de los enlaces de la barra */
 .opciones-barra a {
-    color: #fffaf2;
+    color: #fff5f7;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 15px;
@@ -51,15 +53,15 @@ header .titulo {
 
 /* Hover de los enlaces */
 .opciones-barra a:hover {
-    background-color: #583b3a;
+    background-color: #c770a4; /* rosa más oscuro al pasar mouse */
 }
 
 /* Contenedor de los formularios */
 form {
-    background-color: #f5efe6; 
+    background-color: #ffe6f5; 
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     max-width: 700px;
     margin: 30px auto;
 }
@@ -69,7 +71,7 @@ form table {
     width: 90%;
     margin: 0 auto;
     border-collapse: collapse;
-    background-color: #fff8f0;
+    background-color: #fff0f7; /* rosa muy claro */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -79,7 +81,7 @@ form table {
 form td {
     padding: 12px;
     font-size: 1rem;
-    color: #241007;
+    color: #7b4e6c; /* rosa oscuro para texto */
 }
 
 /* Encabezados de tabla */
@@ -95,12 +97,12 @@ form textarea,
 form select {
     width: 100%;
     padding: 8px 10px;
-    border: 2px solid #634140;
+    border: 2px solid #e08ebf; /* borde rosa medio */
     border-radius: 8px;
     font-size: 1rem;
     box-sizing: border-box;
-    background-color: #fffaf2;
-    color: #241007;
+    background-color: #fff5f7;
+    color: #7b4e6c;
     transition: all 0.3s ease;
 }
 
@@ -108,16 +110,16 @@ form select {
 form input[type="text"]:focus,
 form textarea:focus,
 form select:focus {
-    border-color: #583b3a;
-    box-shadow: 0 0 5px rgba(88,59,58,0.4);
+    border-color: #c770a4; /* rosa más oscuro */
+    box-shadow: 0 0 5px rgba(199,112,164,0.4);
     outline: none;
 }
 
 /* Botones */
 form button {
     display: block;
-    background-color: #634140;
-    color: #fffaf2;
+    background-color: #e08ebf; /* rosa medio */
+    color: #fff5f7;
     border: none;
     padding: 12px 25px;
     border-radius: 10px;
@@ -129,13 +131,13 @@ form button {
 
 /* Hover de botones */
 form button:hover {
-    background-color: #583b3a;
+    background-color: #c770a4; /* rosa más intenso */
 }
 
 /* Títulos de sección */
 form h2 {
     text-align: center;
-    color: #241007;
+    color: #7b4e6c; /* rosa oscuro */
     margin-bottom: 20px;
 }
 
@@ -150,12 +152,13 @@ form textarea {
     display: none;
 }
 
+/* Flecha para volver al inicio */
 .flecha-inicio {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: #634140;
-    color: #fffaf2;
+    background-color: #e08ebf; /* rosa medio */
+    color: #fff5f7;
     padding: 10px 15px;
     border-radius: 50%;
     text-decoration: none;
@@ -166,5 +169,5 @@ form textarea {
 }
 
 .flecha-inicio:hover {
-    background-color: #583b3a;
+    background-color: #c770a4; /* rosa más intenso */
 }

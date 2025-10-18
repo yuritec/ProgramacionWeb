@@ -1,11 +1,7 @@
+function toggleMenu() {
+    const menu = document.getElementById("menuHamburguesa");
+    menu.classList.toggle("activo");
+  }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const toggleButton = document.getElementById('menu-toggle');
-        const menu = document.querySelector('.menu-lateral');
-
-        toggleButton.addEventListener('click', () => {
-            menu.classList.toggle('visible');
-        });
-    });
 
 
