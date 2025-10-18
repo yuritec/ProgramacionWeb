@@ -35,7 +35,6 @@ main {
   flex: 1;
 }
 
-
 .botones-izquierda {
   display: flex;
   gap: 15px;
