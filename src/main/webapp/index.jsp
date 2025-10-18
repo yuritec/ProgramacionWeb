@@ -40,14 +40,14 @@
         </header>
 
         <main>
-            <section class="bienvenida">
+            <section class="bienvenida" id="inicio">
                 <h1>Bienvenido a <span>GLIMM&GLAM</span></h1>
                 <p>
                     Donde todo es glamour y elegancia, para que te maquilles como reina y brilles como diosa.
                 </p>
             </section>
 
-            <section class="contenido-principal" id="inicio">
+            <section class="contenido-principal">
                 <div class="fila-vision-mision">
                     <section class="seccion-vision">
                         <h2>Visión</h2>

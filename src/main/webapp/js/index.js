@@ -33,17 +33,6 @@ $(document).ready(function () {
     }
   );
 
-
-  $("a[href='#inicio']").click(function (e) {
-    e.preventDefault();
-    Swal.fire({
-      title: "Glimm & Glam",
-      text: "Somos una marca dedicada a resaltar tu belleza natural ✨",
-      icon: "info",
-      confirmButtonColor: "#a56c57"
-    });
-  });
-
   // Efecto al pasar sobre los valores de la empresa
   $(".valor").hover(
     function () {

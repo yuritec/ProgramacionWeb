@@ -13,7 +13,6 @@ document.querySelectorAll('#menuHamburguesa a').forEach(link => {
 
 
 $(document).ready(function () {
-
     // Animación de aparición de las secciones al cambiar
     $(".form-seccion").hide(); 
     $("#alta").fadeIn(600); 
