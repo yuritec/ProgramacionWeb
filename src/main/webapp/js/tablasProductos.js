@@ -1,37 +1,43 @@
-var links = document.querySelectorAll('.opciones-barra a');
-var secciones = document.querySelectorAll('.form-seccion');
 
 function toggleMenu() {
     const menu = document.getElementById('menuHamburguesa');
     menu.classList.toggle('activo');
 }
 
-//  cerrar menú al hacer clic en un enlace
+// Cerrar menú al hacer clic en un enlace
 document.querySelectorAll('#menuHamburguesa a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById('menuHamburguesa').classList.remove('activo');
     });
 });
 
-// Función para ocultar todas las secciones
-function ocultarSecciones() {
-    for (var i = 0; i < secciones.length; i++) {
-        secciones[i].style.display = 'none';
-    }
-}
 
-// Mostrar la sección al hacer clic en un enlace
-for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function(e) {
+$(document).ready(function () {
+
+    // Animación de aparición de las secciones al cambiar
+    $(".form-seccion").hide(); 
+    $("#alta").fadeIn(600); 
+    $(".opciones-barra a").click(function (e) {
         e.preventDefault();
-        var targetId = this.getAttribute('href').substring(1);
-        ocultarSecciones();
-        document.getElementById(targetId).style.display = 'block';
+        const target = $(this).attr("href");
+        $(".form-seccion").hide();
+        $(target).fadeIn(600);
     });
-}
 
-// Mostrar la primera sección por defecto
-document.getElementById('alta').style.display = 'block';
+    // Efecto hover en botones dentro de las secciones
+    $(".form-seccion button, .form-seccion input[type='submit']").hover(
+        function () {
+            $(this).css({ backgroundColor: "#a56c57", color: "#fff", transition: "0.3s" });
+        },
+        function () {
+            $(this).css({ backgroundColor: "", color: "" });
+        }
+    );
 
-
-
+    // animación en los inputs al enfocarlos
+    $("input, select, textarea").on("focus", function () {
+        $(this).css("box-shadow", "0 0 8px #a56c57");
+    }).on("blur", function () {
+        $(this).css("box-shadow", "none");
+    });
+});

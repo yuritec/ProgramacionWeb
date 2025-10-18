@@ -6,6 +6,9 @@
         <title>Tablas Productos</title>
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="css/formulario.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="js/tablasProductos.js"></script>
     </head>
     
     <body>
@@ -107,7 +110,6 @@
                 Lunes a Domingo de 8 am a 8 pm
             </p>
         </footer>
-        <script src="js/tablasProductos.js"></script>
     </body>
 
 </html>

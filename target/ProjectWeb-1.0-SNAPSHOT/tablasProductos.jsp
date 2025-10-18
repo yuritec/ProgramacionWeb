@@ -4,25 +4,45 @@
     <head>
         <meta charset="UTF-8">
         <title>Tablas Productos</title>
+        <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="css/formulario.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="js/tablasProductos.js"></script>
     </head>
+    
     <body>
-        <!-- Header -->
-        <header>
-            <div class="titulo">
-                <h1>Glimm & Glam</h1>
-                <p>Maquíllate como reina, brilla como diosa</p>
+        <header class="barra-navegacion">
+            <div class="contenedor-header">
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+                <div class="titulo">
+                    <h1>Glimm & Glam</h1>
+                    <p>Maquíllate como reina, brilla como diosa</p>
+                </div>          
             </div>
-        </header>
 
-        <!-- Barra de opciones -->
-        <div class="opciones-barra">
-            <a href="#alta">Registrar</a>
-            <a href="#modificar">Modificar</a>
-            <a href="#eliminar">Eliminar</a>        
-        </div>
-        
-        <a href="index.jsp"  class="flecha-inicio">← Inicio</a>
+            <nav class="opciones-barra">
+                <a href="#alta" class="btn">Registrar</a>
+                <a href="#modificar" class="btn">Modificar</a>
+                <a href="#eliminar" class="btn">Eliminar</a>
+            </nav>
+
+            <nav class="menu-hamburguesa" id="menuHamburguesa">
+                <ul>
+                    <li><a href="marca.jsp">Marca</a></li>
+                    <li><a href="rostro.jsp">Rostro</a></li>
+                    <li><a href="labios.jsp">Labios</a></li>
+                    <li><a href="ojos.jsp">Ojos</a></li>
+                    <li><a href="pestanas.jsp">Pestañas</a></li>
+                    <li><a href="cejas.jsp">Cejas</a></li>
+                    <li><a href="skincare.jsp">Skincare</a></li>
+                    <li><a href="brochas.jsp">Brochas</a></li>
+                    <li><a href="sets.jsp">Sets</a></li>
+                    <li><a href="accesorios.jsp">Accesorios</a></li>
+                    <li><a href="index.jsp">Nosotros</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <!-- Formulario Alta -->
         <section id="alta" class="form-seccion">
@@ -80,17 +100,16 @@
                 </table>
             </form>
         </section>
-        
-        <footer style="background:#3c0b1a; color:white; text-align:center; padding:20px;">
-                <h2>Contáctanos</h2>
-                <img src="Imagenes/contacto.jpg" width="50" height="50" alt="Contacto">
-                <p style="font-weight:bold; text-decoration: underline;">
-                            Contáctanos Escríbenos a atencion@Glim&Glam.com<br>
-                            o Llámanos al 800-737-4072<br>
-                            Lunes a Domingo de 8 am a 8 pm
-                </p> 
+
+        <footer>
+            <h2>Contáctanos</h2>
+            <img src="Imagenes/contacto.jpg" alt="Prueba de imagen" width="300">
+            <p>
+                Contáctanos Escríbenos a atencion@GlimmGlam.com<br>
+                o Llámanos al 800-737-4072<br>
+                Lunes a Domingo de 8 am a 8 pm
+            </p>
         </footer>
-    <script src="js/tablasProductos.js"></script>
     </body>
-    
+
 </html>
