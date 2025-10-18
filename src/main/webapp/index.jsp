@@ -6,8 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Glimm & Glam</title>
         <link rel="stylesheet" href="css/estilos.css">
-        <!--<link rel="stylesheet" href="https://raw.githack.com/yuritec/ProgramacionWeb/main/src/main/webapp/css/formulario.css">-->
-        
     </head>
 
     <body>
@@ -33,7 +31,7 @@
                     <li><a href="sets.jsp">Sets</a></li>
                     <li><a href="accesorios.jsp">Accesorios</a></li>
                     <li><a href="#inicio">Nosotros</a></li>
-                    <li><a href="#tablasProductos.jsp">Tablas Productos</a></li>
+                    <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
                 </ul>
             </nav>
         </header>

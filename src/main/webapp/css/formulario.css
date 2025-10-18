@@ -1,11 +1,10 @@
-/* Fondo de toda la página */
 body {
-    background-color: #ffe6f0; /* rosa muy suave */
+    background-color: #ffe6f0; 
     margin: 0;
     font-family: 'Arial', sans-serif;
+    padding-top: 80px;
 }
 
-/* Header */
 header {
     background: #c33b80; /* rosa intenso */
     color: white;
@@ -26,37 +25,10 @@ header p {
     font-size: 1rem;
 }
 
-/* Título dentro del header */
 header .titulo {
     text-align:center;
 }
 
-/* Barra horizontal de opciones */
-.opciones-barra {
-    display: flex;
-    justify-content: center;
-    background-color: #e08ebf; /* rosa medio */
-    padding: 10px 0;
-    gap: 30px;
-    border-radius: 0 0 10px 10px;
-}
-
-/* Estilo de los enlaces de la barra */
-.opciones-barra a {
-    color: #fff5f7;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-/* Hover de los enlaces */
-.opciones-barra a:hover {
-    background-color: #c770a4; /* rosa más oscuro al pasar mouse */
-}
-
-/* Contenedor de los formularios */
 form {
     background-color: #ffe6f5; 
     padding: 25px;
@@ -66,22 +38,21 @@ form {
     margin: 30px auto;
 }
 
-/* Tabla dentro de formularios */
 form table {
     width: 90%;
     margin: 0 auto;
     border-collapse: collapse;
-    background-color: #fff0f7; /* rosa muy claro */
+    background-color: #fff0f7; 
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Celdas de tabla */
 form td {
     padding: 12px;
+    margin-top: 30px;
     font-size: 1rem;
-    color: #7b4e6c; /* rosa oscuro para texto */
+    color: #7b4e6c; 
 }
 
 /* Encabezados de tabla */
@@ -91,13 +62,12 @@ form td:first-child {
     width: 35%;
 }
 
-/* Inputs, textarea y selects */
 form input[type="text"],
 form textarea,
 form select {
     width: 100%;
     padding: 8px 10px;
-    border: 2px solid #e08ebf; /* borde rosa medio */
+    border: 2px solid #e08ebf; 
     border-radius: 8px;
     font-size: 1rem;
     box-sizing: border-box;
@@ -106,19 +76,17 @@ form select {
     transition: all 0.3s ease;
 }
 
-/* Focus */
 form input[type="text"]:focus,
 form textarea:focus,
 form select:focus {
-    border-color: #c770a4; /* rosa más oscuro */
+    border-color: #c770a4; 
     box-shadow: 0 0 5px rgba(199,112,164,0.4);
     outline: none;
 }
 
-/* Botones */
 form button {
     display: block;
-    background-color: #e08ebf; /* rosa medio */
+    background-color: #e08ebf; 
     color: #fff5f7;
     border: none;
     padding: 12px 25px;
@@ -129,45 +97,149 @@ form button {
     transition: all 0.3s ease;
 }
 
-/* Hover de botones */
 form button:hover {
-    background-color: #c770a4; /* rosa más intenso */
+    background-color: #c770a4;
 }
 
-/* Títulos de sección */
 form h2 {
     text-align: center;
-    color: #7b4e6c; /* rosa oscuro */
+    color: #7b4e6c; 
     margin-bottom: 20px;
 }
 
-/* Textarea ajustable */
 form textarea {
     resize: vertical;
     min-height: 60px;
 }
 
-/* Todas las secciones empiezan ocultas */
 .form-seccion {
     display: none;
 }
 
-/* Flecha para volver al inicio */
-.flecha-inicio {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #e08ebf; /* rosa medio */
-    color: #fff5f7;
-    padding: 10px 15px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 1.5rem;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    transition: background 0.3s;
-    z-index: 1000;
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background-color: #c3a6b1;
+  color: #fff5f7;
+  border-top: 1px solid #eae3e8;
 }
 
-.flecha-inicio:hover {
-    background-color: #c770a4; /* rosa más intenso */
+footer h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #f8f8f8;
 }
+
+footer p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+footer img {
+  max-width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.menu-horizontal ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-horizontal a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.menu-horizontal a:hover {
+  color: #7b4e33; 
+}
+
+
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px; 
+  margin-right: 10px; 
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+}
+
+.menu-hamburguesa {
+  cursor: pointer;
+  position: absolute;
+  top: 60px; 
+  right: 20px;
+  width: 250px;
+  background-color: #fff5f7;
+  border: 1px solid #d88ca4;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(216, 140, 164, 0.3);
+  padding: 20px;
+  display: none;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-hamburguesa ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.menu-hamburguesa li {
+  margin-bottom: 5px;
+}
+
+.menu-hamburguesa a {
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.menu-hamburguesa a:hover {
+  background-color: rgba(255, 255, 255, 0.3); 
+  transform: scale(1.05); 
+}
+
+.menu-hamburguesa.activo {
+  display: block;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 20%;
+  padding-bottom: 20px;
+  background-color: #d88ca4;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 9999;
+}
+
+.menu-hamburguesa a:hover {
+  color: #7b4e6c;
+}
+
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+
