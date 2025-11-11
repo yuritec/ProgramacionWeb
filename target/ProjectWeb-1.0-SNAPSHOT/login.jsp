@@ -26,8 +26,7 @@
         <% } %>
 
         <header>
-            <a href="index.jsp" class="back-btn">❮</a>
-            <img src="Imagenes/logo.jpg" alt="Logo" class="logo-small">
+            <a href="index.jsp" class="back-btn"></a>
         </header>
 
         <h2>Inicio de sesión</h2>
@@ -39,7 +38,10 @@
             <label>Contraseña</label>
             <input type="password" name="password" placeholder="Contraseña" required>
 
-            <button type="submit" class="btn-amarillo">Iniciar sesión</button>
+            <button type="button" class="btn-amarillo" onclick="window.location='index.jsp'">
+                Iniciar sesión
+            </button>
+
 
             <% if (error != null) { %>
                 <p style="color:red; text-align:center;"><%= error %></p>

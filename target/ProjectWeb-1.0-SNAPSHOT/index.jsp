@@ -15,8 +15,7 @@
         <header class="barra-navegacion">
             <div class="contenedor-header">
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-                <div class="botones-izquierda">
-                    <a href="login.jsp" class="btn">Iniciar sesión</a>
+                <div class="botones-izquierda">                   
                     <a href="#" class="btn">Cerrar Sesión</a>
                 </div>
             </div>
