@@ -16,25 +16,27 @@
             <div class="contenedor-header">
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
                 <div class="botones-izquierda">
-                    <a href="#" class="btn">Iniciar sesión</a>
+                    <a href="login.jsp" class="btn">Iniciar sesión</a>
                     <a href="#" class="btn">Registrarse</a>
                 </div>
             </div>
 
             <nav class="menu-hamburguesa" id="menuHamburguesa">
                 <ul>
-                    <li><a href="marca.jsp">Marca</a></li>
-                    <li><a href="rostro.jsp">Rostro</a></li>
-                    <li><a href="labios.jsp">Labios</a></li>
-                    <li><a href="ojos.jsp">Ojos</a></li>
-                    <li><a href="pestanas.jsp">Pestañas</a></li>
-                    <li><a href="cejas.jsp">Cejas</a></li>
-                    <li><a href="skincare.jsp">Skincare</a></li>
-                    <li><a href="brochas.jsp">Brochas</a></li>
-                    <li><a href="sets.jsp">Sets</a></li>
-                    <li><a href="accesorios.jsp">Accesorios</a></li>
+                    <li><a href="productos.jsp?filtro=Marca">Marca</a></li>
+                    <li><a href="productos.jsp?filtro=Rostro">Rostro</a></li>
+                    <li><a href="productos.jsp?filtro=Labios">Labios</a></li>
+                    <li><a href="productos.jsp?filtro=Ojos">Ojos</a></li>
+                    <li><a href="productos.jsp?filtro=Pestañas">Pestañas</a></li>
+                    <li><a href="productos.jsp?filtro=Cejas">Cejas</a></li>
+                    <li><a href="productos.jsp?filtro=Skincare">Skincare</a></li>
+                    <li><a href=productos.jsp?filtro=Brochas">Brochas</a></li>
+                    <li><a href="productos.jsp?filtro=Sets">Sets</a></li>
+                    <li><a href="productos.jsp?filtro=Accesorios">Accesorios</a></li>
+                    <li><a href="productos.jsp?filtro=Todo">Ver todo</a></li>
                     <li><a href="#inicio">Nosotros</a></li>
                     <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
+                    <li><a href="tablasUsuarios.jsp">Tablas Usuarios</a></li>
                 </ul>
             </nav>
         </header>

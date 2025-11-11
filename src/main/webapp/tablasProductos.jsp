@@ -52,7 +52,9 @@
                     <li><a href="brochas.jsp">Brochas</a></li>
                     <li><a href="sets.jsp">Sets</a></li>
                     <li><a href="accesorios.jsp">Accesorios</a></li>
-                    <li><a href="index.jsp">Nosotros</a></li>
+                    <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
+                    <li><a href="tablasUsuarios.jsp">Tablas Usuarios</a></li>
+                    <li><a href="index.jsp">Regresar al inicio</a></li>
                 </ul>
             </nav>
         </header>
@@ -83,9 +85,9 @@
                             </select>
                         </td>
                     </tr>
-                    <div class="mensaje-validacion" style="display:none;"></div>
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Guardar</button></td></tr>
                 </table>
+               <div class="mensaje-validacion" style="display:none;"></div>
             </form>
         </section>
 
@@ -98,9 +100,10 @@
                     <tr><td>ID Producto:</td><td><input type="text" name="id" required></td></tr>
                     <tr><td>Nuevo Precio:</td><td><input type="text" name="precio"></td></tr>
                     <tr><td>Nuevo Stock:</td><td><input type="text" name="stock"></td></tr>
-                    <div class="mensaje-validacion" style="display:none;"></div>
+                    
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Modificar</button></td></tr>
                 </table>
+                <div class="mensaje-validacion" style="display:none;"></div>
             </form>
         </section>
 
@@ -111,9 +114,10 @@
                 <input type="hidden" name="accion" value="eliminar">
                 <table>
                     <tr><td>ID Producto:</td><td><input type="text" name="id" required></td></tr>
-                    <div class="mensaje-validacion" style="display:none;"></div>
+                    
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Eliminar</button></td></tr>
                 </table>
+                <div class="mensaje-validacion" style="display:none;"></div>
             </form>
         </section>
 

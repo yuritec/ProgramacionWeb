@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: #c33b80; /* rosa intenso */
+    background: #c33b80; 
     color: white;
     padding: 10px 0;
     display: flex;
@@ -55,14 +55,14 @@ form td {
     color: #7b4e6c; 
 }
 
-/* Encabezados de tabla */
 form td:first-child {
     font-weight: bold;
     text-align: right;
     width: 35%;
 }
-
 form input[type="text"],
+form input[type="email"],
+form input[type="password"],
 form textarea,
 form select {
     width: 100%;
@@ -77,6 +77,8 @@ form select {
 }
 
 form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
 form textarea:focus,
 form select:focus {
     border-color: #c770a4; 

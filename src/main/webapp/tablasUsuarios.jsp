@@ -3,12 +3,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Tablas Productos</title>
+        <title>Tablas Usuarios</title>
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="css/formulario.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="js/tablasProductos.js"></script>
+        <script src="js/tablasUsuarios.js"></script>
     </head>
     
     <body>
@@ -17,20 +17,21 @@
             String mensaje = null;
 
             if ("alta".equals(accion)) {
-                mensaje = "Producto registrado con éxito";
+                mensaje = "Usuario registrado con éxito";
             } else if ("modificar".equals(accion)) {
-                mensaje = "Producto modificado con éxito";
+                mensaje = "Usuario modificado con éxito";
             } else if ("eliminar".equals(accion)) {
-                mensaje = "Producto eliminado con éxito";
+                mensaje = "Usuario eliminado con éxito";
             }
         %>
 
+        <!-- HEADER -->
         <header class="barra-navegacion">
             <div class="contenedor-header">
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
                 <div class="titulo">
                     <h1>Glimm & Glam</h1>
-                    <p>Maquíllate como reina, brilla como diosa</p>
+                    <p>Administración de Usuarios</p>
                 </div>          
             </div>
 
@@ -59,62 +60,58 @@
             </nav>
         </header>
 
-        <!-- Formulario Alta -->
         <section id="alta" class="form-seccion">
             <form method="post">
-                <h2>Registrar Producto</h2>
+                <h2>Registrar Usuario</h2>
                 <input type="hidden" name="accion" value="alta">
                 <table>
                     <tr><td>Nombre:</td><td><input type="text" name="nombre" required></td></tr>
-                    <tr><td>Marca:</td><td><input type="text" name="marca" required></td></tr>
-                    <tr><td>Descripción:</td><td><textarea name="descripcion"></textarea></td></tr>
-                    <tr><td>Precio:</td><td><input type="text" name="precio" required></td></tr>
-                    <tr><td>Stock:</td><td><input type="text" name="stock" required></td></tr>
-                    <tr><td>Categoría:</td>
+                    <tr><td>Correo:</td><td><input type="email" name="correo" required></td></tr>
+                    <tr><td>Contraseña:</td><td><input type="password" name="password" required></td></tr>
+                    <tr><td>Rol:</td>
                         <td>
-                            <select name="id_categoria">
-                                <option value="2">Rostro</option>
-                                <option value="3">Cejas</option>
-                                <option value="4">Labios</option>
-                                <option value="5">Pestañas</option>
-                                <option value="6">Ojos</option>
-                                <option value="7">Brochas</option>
-                                <option value="8">Sets</option>
-                                <option value="9">Skincare</option>
-                                <option value="10">Accesorios</option>
+                            <select name="rol">
+                                <option value="admin">Administrador</option>
+                                <option value="cliente">Cliente</option>
                             </select>
                         </td>
                     </tr>
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Guardar</button></td></tr>
                 </table>
-               <div class="mensaje-validacion" style="display:none;"></div>
+                <div class="mensaje-validacion" style="display:none;"></div>
             </form>
         </section>
 
-        <!-- Formulario Modificar -->
         <section id="modificar" class="form-seccion">
             <form method="post">
-                <h2>Modificar Producto</h2>
+                <h2>Modificar Usuario</h2>
                 <input type="hidden" name="accion" value="modificar">
                 <table>
-                    <tr><td>ID Producto:</td><td><input type="text" name="id" required></td></tr>
-                    <tr><td>Nuevo Precio:</td><td><input type="text" name="precio"></td></tr>
-                    <tr><td>Nuevo Stock:</td><td><input type="text" name="stock"></td></tr>
-                    
+                    <tr><td>ID Usuario:</td><td><input type="text" name="id" required></td></tr>
+                    <tr><td>Nuevo Nombre:</td><td><input type="text" name="nombre"></td></tr>
+                    <tr><td>Nuevo Correo:</td><td><input type="email" name="correo"></td></tr>
+                    <tr><td>Nueva Contraseña:</td><td><input type="password" name="password"></td></tr>
+                    <tr><td>Nueva Rol:</td>
+                        <td>
+                            <select name="rol">
+                                <option value="">-- Seleccionar --</option>
+                                <option value="admin">Administrador</option>
+                                <option value="cliente">Cliente</option>
+                            </select>
+                        </td>
+                    </tr>
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Modificar</button></td></tr>
                 </table>
                 <div class="mensaje-validacion" style="display:none;"></div>
             </form>
         </section>
 
-        <!-- Formulario Eliminar -->
         <section id="eliminar" class="form-seccion">
             <form method="post">
-                <h2>Eliminar Producto</h2>
+                <h2>Eliminar Usuario</h2>
                 <input type="hidden" name="accion" value="eliminar">
                 <table>
-                    <tr><td>ID Producto:</td><td><input type="text" name="id" required></td></tr>
-                    
+                    <tr><td>ID Usuario:</td><td><input type="text" name="id" required></td></tr>
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Eliminar</button></td></tr>
                 </table>
                 <div class="mensaje-validacion" style="display:none;"></div>
@@ -125,11 +122,12 @@
             <h2>Contáctanos</h2>
             <img src="Imagenes/contacto.jpg" alt="Prueba de imagen" width="300">
             <p>
-                Contáctanos Escríbenos a atencion@GlimmGlam.com<br>
-                o Llámanos al 800-737-4072<br>
+                Escríbenos a atencion@GlimmGlam.com<br>
+                Llámanos al 800-737-4072<br>
                 Lunes a Domingo de 8 am a 8 pm
             </p>
         </footer>
+
         <script>
             var mensaje = "<%= mensaje != null ? mensaje : "" %>";
         </script>
