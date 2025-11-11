@@ -17,7 +17,7 @@
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
                 <div class="botones-izquierda">
                     <a href="#" class="btn">Iniciar sesión</a>
-                    <a href="#" class="btn">Registrarse</a>
+                    <a href="#" class="btn">Cerrar Sesión</a>
                 </div>
             </div>
 
