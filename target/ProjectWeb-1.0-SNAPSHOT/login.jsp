@@ -1,3 +1,6 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="projectWeb.DBManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,19 +14,43 @@
 </head>
 
 <body>
+    
+    <%
+        String correo = request.getParameter("email");
+        String contrasena = request.getParameter("password");
+        String mensajeError = null;
+
+        if (correo != null && contrasena != null) {
+            DBManager db = new DBManager();
+            try {
+                db.open();
+                PreparedStatement ps = db.getCon().prepareStatement(
+                    "SELECT * FROM usuarios WHERE correo = ? AND contrasena = ?"
+                );
+                ps.setString(1, correo);
+                ps.setString(2, contrasena);
+                ResultSet rs = ps.executeQuery();
+
+                if (rs.next()) {
+                    session.setAttribute("usuario", correo);
+                    response.sendRedirect("home.jsp");
+                } else {
+                    mensajeError = "Correo o contraseña incorrectos";
+                }
+
+                rs.close();
+                ps.close();
+                db.close();
+
+            } catch (Exception e) {
+                mensajeError = "Error interno: " + e.getMessage();
+            }
+            }
+    %>
+
+
 
     <section class="pantalla pantalla-login">
-
-        <% 
-            String error = (String) request.getAttribute("error");
-            String success = (String) request.getAttribute("success");
-        %>
-
-        <% if (success != null) { %>
-        <div class="message-container">
-            <div class="alert alert-success"><%= success %></div>
-        </div>
-        <% } %>
 
         <header>
             <a href="index.jsp" class="back-btn"></a>
@@ -31,7 +58,7 @@
 
         <h2>Inicio de sesión</h2>
 
-        <form class="login-form" method="post" action="LoginServlet">
+        <form class="login-form" method="post" action="login.jsp">
             <label>Correo electrónico</label>
             <input type="email" name="email" placeholder="Correo electrónico" required>
 
@@ -43,8 +70,8 @@
             </button>
 
 
-            <% if (error != null) { %>
-                <p style="color:red; text-align:center;"><%= error %></p>
+            <% if (mensajeError  != null) { %>
+                <p style="color:red; text-align:center;"><%= mensajeError  %></p>
             <% } %>
 
             <a href="recovery.jsp" class="olvide">¿Olvidaste tu contraseña?</a>
