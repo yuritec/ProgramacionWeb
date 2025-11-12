@@ -71,6 +71,19 @@
     margin-top: 50px;  
 }
 
+.grid-productos .sin-productos {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #7b4e6c;
+    font-weight: bold;
+    padding: 25px 0;
+    background-color: #ffe6f5;
+    border: 2px solid #d88ca4;
+    border-radius: 12px;
+    margin: 20px auto;
+}
+
 
 @media (max-width: 768px) {
 

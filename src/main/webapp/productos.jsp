@@ -118,7 +118,7 @@ if (marcaSeleccionada != null) {
     while (rsMarca.next()) {
         hayProductosMarca = true;
         String img = rsMarca.getString("url_imagen");
-        if (img == null || img.trim().equals("")) img = "Imagenes/sin-imagen.png";
+        if (img == null || img.trim().equals("")) img = "img/sin-imagen.png";
 %>
 
     <div class="card-producto">
@@ -133,7 +133,7 @@ if (marcaSeleccionada != null) {
 
     if (!hayProductosMarca) {
 %>
-        <p class="sin-productos">No hay artículos disponibles para esta marca.</p>
+        <p class="sin-productos">No hay artículos disponibles .</p>
 <%
     }
 
@@ -187,7 +187,7 @@ if (mostrarProductos) {
 
     if (!hayProductosCat) {
 %>
-        <p class="sin-productos">No hay artículos disponibles para esta categoría.</p>
+        <p class="sin-productos">No hay artículos disponibles</p>
 <%
     }
 
