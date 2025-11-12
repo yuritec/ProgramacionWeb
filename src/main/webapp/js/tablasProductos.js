@@ -38,19 +38,18 @@ $(document).ready(function () {
 
     $form.find(".mensaje-error-campo").remove();
 
-    if (accion === "alta") {
-        // Todos los campos requeridos
-        $form.find("input[required], select, textarea").each(function () {
-            if (!$(this).val().trim()) {
-                mostrarError($(this), "Este campo es obligatorio.");
-                valid = false;
-            }
-        });
+        if (accion === "alta") {
+            $form.find("input[required], select, textarea").each(function () {
+                if (!$(this).val().trim()) {
+                    mostrarError($(this), "Este campo es obligatorio.");
+                    valid = false;
+                }
+            });
 
-        validarCamposNumericos($form);
-        validarLongitudes($form);
-
-    } else if (accion === "modificar") {
+            if (!validarCamposNumericos($form)) valid = false;
+            validarLongitudes($form);
+        }
+        else if (accion === "modificar") {
         const id = $form.find("input[name='id']").val().trim();
         const precio = $form.find("input[name='precio']").val().trim();
         const stock = $form.find("input[name='stock']").val().trim();
@@ -102,23 +101,29 @@ $(document).ready(function () {
     }
 
     function validarCamposNumericos($form) {
-        $form.find("input[type='text']").each(function () {
-            const nombreCampo = $(this).attr("name");
-            const valor = $(this).val().trim();
+    let valid = true; // <-- nuevo
+    $form.find("input[type='text']").each(function () {
+        const nombreCampo = $(this).attr("name");
+        const valor = $(this).val().trim();
 
-            if (["precio", "stock", "id"].includes(nombreCampo) && valor !== "") {
-                if (nombreCampo === "precio" && (isNaN(valor) || Number(valor) <= 0)) {
-                    mostrarError($(this), "El precio debe ser un número mayor que 0.");
-                }
-                if (nombreCampo === "stock" && !/^[1-9]\d*$/.test(valor)) {
-                    mostrarError($(this), "El stock debe ser un número entero positivo.");
-                }
-                if (nombreCampo === "id" && !/^[1-9]\d*$/.test(valor)) {
-                    mostrarError($(this), "El ID debe ser un número entero positivo.");
-                }
+        if (["precio", "stock", "id"].includes(nombreCampo) && valor !== "") {
+            if (nombreCampo === "precio" && (isNaN(valor) || Number(valor) <= 0)) {
+                mostrarError($(this), "El precio debe ser un número mayor que 0.");
+                valid = false;
             }
-        });
+            if (nombreCampo === "stock" && !/^[1-9]\d*$/.test(valor)) {
+                mostrarError($(this), "El stock debe ser un número entero positivo.");
+                valid = false;
+            }
+            if (nombreCampo === "id" && !/^[1-9]\d*$/.test(valor)) {
+                mostrarError($(this), "El ID debe ser un número entero positivo.");
+                valid = false;
+            }
+        }
+    });
+    return valid;
     }
+
 
     function validarLongitudes($form) {
         const nombre = $form.find("input[name='nombre']");

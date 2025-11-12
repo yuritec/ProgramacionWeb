@@ -1,3 +1,5 @@
+<%@ page import="projectWeb.DBManager" %>
+<%@ page import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,14 +17,70 @@
         <%
             String accion = request.getParameter("accion");
             String mensaje = null;
+            
+            if (accion != null) {
+                DBManager db = new DBManager();
+                try {
+                    db.open();
 
-            if ("alta".equals(accion)) {
-                mensaje = "Producto registrado con éxito";
-            } else if ("modificar".equals(accion)) {
-                mensaje = "Producto modificado con éxito";
-            } else if ("eliminar".equals(accion)) {
-                mensaje = "Producto eliminado con éxito";
+                    if ("alta".equals(accion)) {
+                    String nombre = request.getParameter("nombre");
+                    String marca = request.getParameter("marca");
+                    String descripcion = request.getParameter("descripcion");
+                    String precio = request.getParameter("precio");
+                    String stock = request.getParameter("stock");
+                    String id_categoria = request.getParameter("id_categoria");
+                    String url_imagen = request.getParameter("url_imagen");;
+
+                    PreparedStatement ps = db.getCon().prepareStatement(
+                        "INSERT INTO productos (nombre, marca, descripcion, precio, stock, id_categoria, url_imagen) VALUES (?, ?, ?, ?, ?, ?, ?)"
+                    );
+                    ps.setString(1, nombre);
+                    ps.setString(2, marca);
+                    ps.setString(3, descripcion);
+                    ps.setBigDecimal(4, new java.math.BigDecimal(precio));
+                    ps.setInt(5, Integer.parseInt(stock));
+                    ps.setInt(6, Integer.parseInt(id_categoria));
+                    ps.setString(7, url_imagen);
+                    ps.executeUpdate();
+                    ps.close();
+
+                    mensaje = "Producto registrado con éxito";
+
+                    } else if ("modificar".equals(accion)) {
+                    String id = request.getParameter("id");
+                    String precio = request.getParameter("precio");
+                    String stock = request.getParameter("stock");
+
+                    PreparedStatement ps = db.getCon().prepareStatement(
+                        "UPDATE productos SET precio = ?, stock = ? WHERE id_producto = ?"
+                    );
+                    ps.setBigDecimal(1, new java.math.BigDecimal(precio));
+                    ps.setInt(2, Integer.parseInt(stock));
+                    ps.setInt(3, Integer.parseInt(id));
+                    ps.executeUpdate();
+                    ps.close();
+
+                    mensaje = "Producto modificado con éxito";
+                
+                    } else if ("eliminar".equals(accion)) {
+                    String id = request.getParameter("id");
+
+                    PreparedStatement ps = db.getCon().prepareStatement(
+                        "DELETE FROM productos WHERE id_producto = ?"
+                    );
+                    ps.setInt(1, Integer.parseInt(id));
+                    ps.executeUpdate();
+                    ps.close();
+
+                    mensaje = "Producto eliminado con éxito";
+                }
+
+                db.close();
+            } catch (Exception e) {
+                mensaje = "Error: " + e.getMessage();
             }
+        }
         %>
 
         <header class="barra-navegacion">
@@ -85,6 +143,7 @@
                             </select>
                         </td>
                     </tr>
+                    <tr><td>Imagen (URL):</td><td><input type="text" name="url_imagen"></td></tr>
                     <tr><td colspan="2" style="text-align:center;"><button type="submit">Guardar</button></td></tr>
                 </table>
                <div class="mensaje-validacion" style="display:none;"></div>
@@ -132,6 +191,21 @@
         </footer>
         <script>
             var mensaje = "<%= mensaje != null ? mensaje : "" %>";
+            if (mensaje.trim() !== "") {
+                Swal.fire({
+                    icon: mensaje.includes("Error") ? 'error' : 'success',
+                    title: '¡Acción completada!',
+                    html: `<div class="mensaje-exito"><strong>${mensaje}</strong><br>Gracias por mantener tu catálogo actualizado 💄✨</div>`,
+                    background: '#fff0f7',
+                    confirmButtonColor: '#e08ebf',
+                    confirmButtonText: '¡Perfecto!',
+                    customClass: {
+                        popup: 'sweet-popup',
+                        confirmButton: 'sweet-button'
+                    }
+                });
+            }
+
         </script>
     </body>
 
