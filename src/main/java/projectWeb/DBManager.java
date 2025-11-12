@@ -12,7 +12,7 @@ public class DBManager {
     private String port = "5432";
     private String user = "postgres";
     private String pass = "postgres123";
-    private String db = "Glimm_Glam";
+    private String db = "glimm_glam";
 
     public void open() throws Exception {
         Class.forName("org.postgresql.Driver");

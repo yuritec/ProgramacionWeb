@@ -16,7 +16,7 @@
             <div class="contenedor-header">
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
                 <div class="botones-izquierda">                   
-                    <a href="#" class="btn">Cerrar Sesión</a>
+                    <a href="logout.jsp" class="btn">Cerrar Sesión</a>
                 </div>
             </div>
 
@@ -34,8 +34,16 @@
                     <li><a href="productos.jsp?filtro=Accesorios">Accesorios</a></li>
                     <li><a href="productos.jsp?filtro=Todo">Ver todo</a></li>
                     <li><a href="#inicio">Nosotros</a></li>
-                    <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
-                    <li><a href="tablasUsuarios.jsp">Tablas Usuarios</a></li>
+                    <%
+                        String rol = (String) session.getAttribute("rol");
+                        if ("administrador".equals(rol)) {
+                    %>
+                        <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
+                        <li><a href="tablasUsuarios.jsp">Tablas Usuarios</a></li>
+                    <%
+                        }
+                    %>
+
                 </ul>
             </nav>
         </header>

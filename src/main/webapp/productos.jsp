@@ -34,8 +34,15 @@
                     <li><a href="productos.jsp?filtro=Accesorios">Accesorios</a></li>
                     <li><a href="productos.jsp?filtro=Todo">Ver todo</a></li>
                      <li><a href="index.jsp">Nosotros</a></li>
-                    <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
-                    <li><a href="tablasUsuarios.jsp">Tablas Usuarios</a></li>
+                    <%
+                        String rol = (String) session.getAttribute("rol");
+                        if ("administrador".equals(rol)) {
+                    %>
+                        <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
+                        <li><a href="tablasUsuarios.jsp">Tablas Usuarios</a></li>
+                    <%
+                        }
+                    %>
                 </ul>
             </nav>
         </header>
