@@ -10,31 +10,19 @@ document.querySelectorAll('#menuHamburguesa a').forEach(link => {
 });
 
 $(document).ready(function () {
-       
-    if (typeof mensaje !== "undefined" && mensaje.trim() !== "") {
-        Swal.fire({
-            icon: 'success',
-            title: '¡Acción completada!',
-            html: `
-                <div class="mensaje-exito">
-                    <strong>${mensaje}</strong><br>
-                    Los usuarios fueron actualizados correctamente 👤✨
-                </div>
-            `,
-            background: '#fff0f7',
-            confirmButtonColor: '#e08ebf',
-            confirmButtonText: 'OK',
-        });
-    }
 
-    $("form").on("submit", function (e) {
+    // ------------------ VALIDACIONES Y ENVÍO AJAX ------------------
+    $("form.formUsuario").on("submit", function (e) {
+        e.preventDefault(); // Evitar el envío tradicional
+
         let valid = true;
         const $form = $(this);
         const accion = $form.find("input[name='accion']").val();
 
+        // Eliminar errores anteriores
         $form.find(".mensaje-error-campo").remove();
 
-        /* ALTA */
+        // -------- VALIDACIÓN PARA ALTA --------
         if (accion === "alta") {
             const nombre = $form.find("input[name='nombre']");
             const correo = $form.find("input[name='correo']");
@@ -53,23 +41,57 @@ $(document).ready(function () {
             if (!rol.val()) { mostrarError(rol, "Selecciona un rol."); valid = false; }
         }
 
-        /* MODIFICAR */
-        else if (accion === "modificar") {
+        // -------- VALIDACIÓN PARA MODIFICAR --------
+        if (accion === "modificar") {
             const id = $form.find("input[name='id']");
-            if (!id.val().trim()) { mostrarError(id, "El ID es obligatorio."); valid = false; }
-            else if (!/^[1-9]\d*$/.test(id.val().trim())) { mostrarError(id, "Debe ser un número entero válido."); valid = false; }
+
+            if (!id.val().trim()) {
+                mostrarError(id, "El ID es obligatorio.");
+                valid = false;
+            } else if (!/^[1-9]\d*$/.test(id.val().trim())) {
+                mostrarError(id, "Debe ser un número válido.");
+                valid = false;
+            }
         }
 
-        /* ELIMINAR */
-        else if (accion === "eliminar") {
+        // -------- VALIDACIÓN PARA ELIMINAR --------
+        if (accion === "eliminar") {
             const id = $form.find("input[name='id']");
-            if (!id.val().trim()) { mostrarError(id, "El ID es obligatorio."); valid = false; }
-            else if (!/^[1-9]\d*$/.test(id.val().trim())) { mostrarError(id, "El ID debe ser un número válido."); valid = false; }
+
+            if (!id.val().trim()) {
+                mostrarError(id, "El ID es obligatorio.");
+                valid = false;
+            } else if (!/^[1-9]\d*$/.test(id.val().trim())) {
+                mostrarError(id, "El ID debe ser un número válido.");
+                valid = false;
+            }
         }
 
-        if (!valid) e.preventDefault();
+        // Si algo falla, detenemos
+        if (!valid) return;
+
+        // ------------------ ENVÍO AJAX ------------------
+        $.ajax({
+            url: "controladorUsuarios.jsp", // IMPORTANTE
+            type: "POST",
+            data: $form.serialize(),
+            success: function (respuesta) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Resultado",
+                    text: respuesta,
+                    confirmButtonColor: "#e08ebf"
+                });
+
+                $form.trigger("reset"); // Limpiar formulario
+            },
+            error: function () {
+                Swal.fire("Error", "No se pudo procesar la solicitud.", "error");
+            }
+        });
     });
 
+    // Mostrar mensaje de error debajo del campo
     function mostrarError($campo, mensaje) {
         const $msg = $("<div>")
             .addClass("mensaje-error-campo")
@@ -80,17 +102,17 @@ $(document).ready(function () {
         $msg.fadeIn();
     }
 
-
+    // ------------------ ANIMACIONES UI ------------------
     $(".form-seccion").hide();
     $("#alta").fadeIn(600);
 
     $(".opciones-barra a").click(function (e) {
         e.preventDefault();
         const target = $(this).attr("href");
+
         $(".form-seccion").hide();
         $(target).fadeIn(600);
     });
-
 
     $(".form-seccion button, .form-seccion input[type='submit']").hover(
         function () {
