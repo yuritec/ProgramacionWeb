@@ -40,13 +40,11 @@
 
                         if ("vendedor".equals(rol)) {
                     %>
-                            <!-- Opciones solo para empleados -->
                             <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
 
                     <%
                         } else if ("administrador".equals(rol)) {
                     %>
-                            <!-- Opciones solo para administradores -->
                             <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
                             <li><a href="tablasUsuarios.jsp">Tablas Usuarios</a></li>
 
