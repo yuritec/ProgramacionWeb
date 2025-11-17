@@ -82,6 +82,7 @@
                         <select name="rol">
                             <option value="administrador">Administrador</option>
                             <option value="cliente">Cliente</option>
+                            <option value="vendedor">Vendedor</option>
                         </select>
                     </td>
                 </tr>
@@ -131,6 +132,7 @@
                             <option value="">-- Seleccionar --</option>
                             <option value="administrador">Administrador</option>
                             <option value="cliente">Cliente</option>
+                            <option value="vendedor">Vendedor</option>
                         </select>
                     </td>
                 </tr>
