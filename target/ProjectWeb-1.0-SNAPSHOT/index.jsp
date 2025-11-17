@@ -15,7 +15,7 @@
         <header class="barra-navegacion">
             <div class="contenedor-header">
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-                <div class="botones-izquierda">                   
+                <div class="botones-izquierda">
                     <a href="logout.jsp" class="btn">Cerrar Sesión</a>
                 </div>
             </div>
@@ -29,17 +29,27 @@
                     <li><a href="productos.jsp?filtro=Pestañas">Pestañas</a></li>
                     <li><a href="productos.jsp?filtro=Cejas">Cejas</a></li>
                     <li><a href="productos.jsp?filtro=Skincare">Skincare</a></li>
-                    <li><a href=productos.jsp?filtro=Brochas">Brochas</a></li>
+                    <li><a href="productos.jsp?filtro=Brochas">Brochas</a></li>
                     <li><a href="productos.jsp?filtro=Sets">Sets</a></li>
                     <li><a href="productos.jsp?filtro=Accesorios">Accesorios</a></li>
                     <li><a href="productos.jsp?filtro=Todo">Ver todo</a></li>
                     <li><a href="#inicio">Nosotros</a></li>
+
                     <%
                         String rol = (String) session.getAttribute("rol");
-                        if ("administrador".equals(rol)) {
+
+                        if ("vendedor".equals(rol)) {
                     %>
-                        <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
-                        <li><a href="tablasUsuarios.jsp">Tablas Usuarios</a></li>
+                            <!-- Opciones solo para empleados -->
+                            <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
+
+                    <%
+                        } else if ("administrador".equals(rol)) {
+                    %>
+                            <!-- Opciones solo para administradores -->
+                            <li><a href="tablasProductos.jsp">Tablas Productos</a></li>
+                            <li><a href="tablasUsuarios.jsp">Tablas Usuarios</a></li>
+
                     <%
                         }
                     %>
@@ -47,6 +57,7 @@
                 </ul>
             </nav>
         </header>
+
 
         <main>
             <section class="bienvenida" id="inicio">
