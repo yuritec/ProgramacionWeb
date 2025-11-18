@@ -4,7 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,7 +122,7 @@ if (marcaSeleccionada != null) {
 %>
 
     <div class="card-producto">
-        <img src="<%= img %>">
+        <img src="<%= img %>" alt="<%= rsMarca.getString("nombre") %>">
         <p class="nombre-producto"><%= rsMarca.getString("nombre") %></p>
         <p class="precio-producto">$<%= rsMarca.getDouble("precio") %> MXN</p>
         <a href="#" class="btn-agregar">Agregar al carrito</a>
@@ -142,7 +142,6 @@ if (marcaSeleccionada != null) {
 }
 %>
 
-</div>
 
 
 
@@ -172,11 +171,11 @@ if (mostrarProductos) {
     while (rs.next()) {
         hayProductosCat = true;
         String img = rs.getString("url_imagen");
-        if (img == null || img.trim().equals("")) img = "img/sin-imagen.png";
+        if (img == null || img.trim().equals("")) img = "img/productos/sin-imagen.jpg";
 %>
 
     <div class="card-producto">
-        <img src="<%= img %>">
+        <img src="<%= img %>" alt="<%= rs.getString("nombre") %>">
         <p class="nombre-producto"><%= rs.getString("nombre") %></p>
         <p class="precio-producto">$<%= rs.getDouble("precio") %> MXN</p>
         <a href="#" class="btn-agregar">Agregar al carrito</a>
@@ -203,7 +202,7 @@ db.close();
 
 <footer>
     <h2>Contáctanos</h2>
-    <img src="Imagenes/contacto.jpg" width="300">
+    <img src="Imagenes/contacto.jpg" width="300" alt="Imagen de contacto">
     <p>
         Escríbenos a atencion@GlimmGlam.com<br>
         Llámanos al 800-737-4072<br>
