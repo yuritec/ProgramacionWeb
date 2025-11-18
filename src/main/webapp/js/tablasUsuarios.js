@@ -10,8 +10,9 @@ document.querySelectorAll('#menuHamburguesa a').forEach(link => {
 });
 
 $(document).ready(function () {
+    
 
-    // ------------------ VALIDACIONES Y ENVÍO AJAX ------------------
+    // VALIDACIONES Y ENVÍO AJAX 
     $("form.formUsuario").on("submit", function (e) {
         e.preventDefault(); // Evitar el envío tradicional
 
@@ -22,7 +23,7 @@ $(document).ready(function () {
         // Eliminar errores anteriores
         $form.find(".mensaje-error-campo").remove();
 
-        // -------- VALIDACIÓN PARA ALTA --------
+        // VALIDACIÓN PARA ALTA 
         if (accion === "alta") {
             const nombre = $form.find("input[name='nombre']");
             const correo = $form.find("input[name='correo']");
@@ -41,7 +42,7 @@ $(document).ready(function () {
             if (!rol.val()) { mostrarError(rol, "Selecciona un rol."); valid = false; }
         }
 
-        // -------- VALIDACIÓN PARA MODIFICAR --------
+        // VALIDACIÓN PARA MODIFICAR 
         if (accion === "modificar") {
             const id = $form.find("input[name='id']");
 
@@ -54,7 +55,7 @@ $(document).ready(function () {
             }
         }
 
-        // -------- VALIDACIÓN PARA ELIMINAR --------
+        // VALIDACIÓN PARA ELIMINAR 
         if (accion === "eliminar") {
             const id = $form.find("input[name='id']");
 
@@ -70,7 +71,7 @@ $(document).ready(function () {
         // Si algo falla, detenemos
         if (!valid) return;
 
-        // ------------------ ENVÍO AJAX ------------------
+        // ENVÍO AJAX 
         $.ajax({
             url: "controladorUsuarios.jsp", // IMPORTANTE
             type: "POST",
@@ -102,7 +103,7 @@ $(document).ready(function () {
         $msg.fadeIn();
     }
 
-    // ------------------ ANIMACIONES UI ------------------
+    // ANIMACIONES 
     $(".form-seccion").hide();
     $("#alta").fadeIn(600);
 
@@ -128,5 +129,7 @@ $(document).ready(function () {
     }).on("blur", function () {
         $(this).css("box-shadow", "none");
     });
+    
+    
 
 });
